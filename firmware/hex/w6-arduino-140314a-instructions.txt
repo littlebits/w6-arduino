@@ -1,0 +1,17 @@
+The .hex file is a combination of littleBitsTester.cpp.hex and Caterina-Leonardo.hex, with the end-of-file character (:00000001FF) between the two files deleted. Caterina-Leonardo.hex is a combination of the bootloader and an Arduino test sketch. THE SKETCH GOES FIRST, then the bootloader, so we needed to replace the Arduino test sketch with ours. This was accomplished thus:
+
+1) burn the bootloader to the chip (Caterina-Leonardo.hex)
+2) upload littleBitsTester.ino app through the Arduino IDE
+3) read back  the programmed chip via ISP, to get the combined .hex file.
+
+Programming Instructions:
+
+Step 0) Using an Atmel programmer, select this chip: atmega32u4.
+
+Step 1) Set fuses as follows:
+
+EXTENDED: 0xCB
+HIGH:     0xD8
+lOW:      0xFF
+
+Step 2) Flash the micro controller with the accompanying w6-arduino???????.hex file.
