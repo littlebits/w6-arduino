@@ -2,7 +2,6 @@
 
 /*
 littleBitsTester
-Sean Schumer
 12 MAY 2014
 
 This program shows basic functionality of the w6-arduino bit.
